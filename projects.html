@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Section</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .project-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-image {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Projects</h2>
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="project-card">
+                    <img src="bmi.jpg" alt="Project 1" class="img-fluid project-image">
+                    <div class="p-3">
+                        <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                        <h5 class="fw-bold">Kalkulator BMI</h5>
+                        <p class="text-muted">Indeks Massa Tubuh (IMT) adalah cara sederhana untuk menilai apakah seseorang termasuk kekurangan berat badan, berat badan normal, kelebihan berat badan, atau obesitas.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="project-card">
+                    <img src="kreditscore.jpg" alt="Project 2" class="img-fluid project-image">
+                    <div class="p-3">
+                        <li><a href="link menyusul">Kredit Scoring</a></li>
+                        <h5 class="fw-bold">Kredit Scoring</h5>
+                        <p class="text-muted">Menilai Calon Nasabah dengan metode kredit scoring.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="project-card">
+                    <img src="arsipdigital.jpg" alt="Project 3" class="img-fluid project-image">
+                    <div class="p-3">
+                        <li><a href="link menyusul">Arsip Digital</a></li>
+                        <h5 class="fw-bold">Arsip Digital</h5>
+                        <p class="text-muted">koleksi data atau dokumen yang disimpan dalam format digital (elektronik) dan dikelola untuk tujuan penyimpanan, pengelolaan, dan pemeliharaan informasi yang terorganisir dengan baik. Arsip ini bisa berupa file teks, gambar, audio, video, atau bentuk data digital lainnya yang memiliki nilai historis, legal, administratif, atau lainnya.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

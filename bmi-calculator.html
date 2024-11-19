@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .result {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .underweight {
+            color: #17a2b8;
+        }
+        .normal {
+            color: #28a745;
+        }
+        .overweight {
+            color: #ffc107;
+        }
+        .obesity {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-light p-3">
+        <nav>
+            <a href="aboutme.html" class="text-decoration-none">Home</a> |
+            <a href="#about-bmi">About BMI</a> |
+            <a href="#bmi-calculator">BMI Calculator</a> |
+            <a href="#health-tips">Health Tips</a> |
+            <a href="#faq">FAQ</a>
+        </nav>
+    </header>
+
+    <!-- About BMI -->
+    <section id="about-bmi" class="p-4">
+        <h2>About BMI</h2>
+        <p>Indeks Massa Tubuh (IMT) adalah cara yang umum digunakan untuk menilai status gizi berdasarkan tinggi badan dan berat badan.</p>
+    </section>
+
+    <!-- BMI Calculator -->
+    <section id="bmi-calculator" class="p-4">
+        <h2>BMI Calculator</h2>
+        <form id="bmi-form">
+            <div class="mb-3">
+                <label for="height" class="form-label">Tinggi (cm)</label>
+                <input type="number" id="height" class="form-control" placeholder="Enter your height">
+            </div>
+            <div class="mb-3">
+                <label for="weight" class="form-label">Berat (kg)</label>
+                <input type="number" id="weight" class="form-control" placeholder="Enter your weight">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="calculateBMI()">Hitung BMI</button>
+        </form>
+        <div id="bmi-result" class="result mt-3"></div>
+    </section>
+
+    <!-- Health Tips -->
+    <section id="health-tips" class="p-4">
+        <h2>Tips Kesehatan</h2>
+        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#tips-list" aria-expanded="false" aria-controls="tips-list">
+            Tampilkan Tips
+        </button>
+        <div class="collapse mt-3" id="tips-list">
+            <ul>
+                <li>Pola makan sehat dan seimbang.</li>
+                <li>Olahraga secara teratur.</li>
+                <li>Hidrasi yang cukup.</li>
+                <li>Kendalikan stres dan cukup tidur.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="p-4">
+        <h2>FAQ</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                        Apa itu BMI?
+                    </button>
+                </h2>
+                <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        BMI adalah singkatan dari Body Mass Index (Indeks Massa Tubuh), digunakan untuk menilai apakah berat badan seseorang dalam kisaran sehat.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center p-3">
+        <p>© 2024 BMI Calculator | <a href="contactme.html">Contact Us</a></p>
+    </footer>
+
+    <script>
+        function calculateBMI() {
+            const height = document.getElementById('height').value / 100;
+            const weight = document.getElementById('weight').value;
+            const bmi = (weight / (height * height)).toFixed(2);
+            let resultMessage = `BMI Anda adalah ${bmi}.`;
+            let resultClass = '';
+
+            if (bmi < 18.5) {
+                resultMessage += " Anda berada dalam kategori Berat Badan Kurang.";
+                resultClass = 'underweight';
+            } else if (bmi < 25) {
+                resultMessage += " Anda memiliki Berat Badan Normal.";
+                resultClass = 'normal';
+            } else if (bmi < 30) {
+                resultMessage += " Anda kelebihan berat badan.";
+                resultClass = 'overweight';
+            } else {
+                resultMessage += " Anda termasuk dalam kategori Obesitas.";
+                resultClass = 'obesity';
+            }
+
+            const resultElement = document.getElementById('bmi-result');
+            resultElement.innerText = resultMessage;
+            resultElement.className = `result ${resultClass}`;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
